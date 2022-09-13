@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+*{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+header{
+    padding: 1px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+.conjunction{
+    margin-top: 10px;
+    margin-right: 5px;
+    overflow: hidden;
+    display: block;
+}
+table, td, th{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 0px;
+    border-collapse: collapse;
+    text-align: center;
+}
+section{
+    width: 55%;
+    padding: 0.25cm;
+    float: left;
+    margin-right: 5px;
+}
+article{
+    padding: 0.25cm;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+aside{
+    width: 40.5%;
+    padding: 0.25cm;
+    float: right;
+    overflow: hidden;
+}
+input{
+    width: 100%;
+}
+input[type=checkbox]{
+    width: 20px;
+    margin: .4rem;
+}
+button{
+    border-radius: 0px;
+    width: auto;
+    border: 0px solid;
+    padding: 5px;
+    margin: 5px;
+}
