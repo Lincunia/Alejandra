@@ -6,5 +6,4 @@ $link = mysqli_connect(
   '',
   'great_brother'
 ) or die(mysqli_erro($mysqli));
-echo '<h1>Algo</h1>';
 ?>

@@ -53,3 +53,24 @@ button{
     padding: 5px;
     margin: 5px;
 }
+.exce_enter{
+    background-color: #9ad3fc;
+    padding: 5px;
+    text-align: center;
+}
+/*=============================*/
+.modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(195, 230, 199, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+.modal{
+    padding: 0.5cm;
+    width: 50%;
+    max-width: 100%;
+}

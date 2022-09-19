@@ -1,6 +1,6 @@
 <?php
 include('../connection.php');
-
+$_SESSION['result']='';
 if(isset($_POST['parents_log_in'])){
     $id=$_POST['parents_id'];
     $email=$_POST['parents_email'];
@@ -16,13 +16,13 @@ if(isset($_POST['students_log_in'])){
 if(!$result){
     die('<br>Consulta no valida: '.$link->error);
 }
-
 else{
-    $_SESSION['result'] = $result->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['result']=$result->fetch_array(MYSQLI_NUM);
     if(!$_SESSION['result']){
+	$_SESSION['message']='No puedes acceder, digita bien los datos o registrate';
 	header('Location: ../../index.php');
     }
-    if($_SESSION['result']['name']==$name && $_SESSION['result']['id']==$id && $_SESSION['result']['level']==$fdi) header('Location: ../sub/list.php');
-    header('Location: ../../sub/list.php');
+    if($_SESSION['result'][0]==$id && $_SESSION['result'][1]==$name && $_SESSION['result'][2]==$pass) header('Location: ../sub/list.php');
+    //if($_SESSION['result'][0]==$id && $_SESSION['result'][1]==$name && $_SESSION['result'][2]==$pass) header('Location: ../sub/check.php');
 }
 ?>
