@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Oleo+Script+Swash+Caps&display=swap');
 *{
     font-family: 'Noto Sans JP', sans-serif;
+}
+h1{
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 1.5cm
 }
 header{
     padding: 1px;
@@ -26,6 +31,7 @@ section{
     padding: 0.25cm;
     float: left;
     margin-right: 5px;
+    overflow: hidden;
 }
 article{
     padding: 0.25cm;
@@ -36,7 +42,6 @@ article{
 aside{
     width: 40.5%;
     padding: 0.25cm;
-    float: right;
     overflow: hidden;
 }
 input{

@@ -23,6 +23,7 @@ else{
 	header('Location: ../../index.php');
     }
     if($_SESSION['result'][0]==$id && $_SESSION['result'][1]==$name && $_SESSION['result'][2]==$pass) header('Location: ../sub/list.php');
-    //if($_SESSION['result'][0]==$id && $_SESSION['result'][1]==$name && $_SESSION['result'][2]==$pass) header('Location: ../sub/check.php');
+    if($_SESSION['result'][0]==$email && $_SESSION['result'][1]==$pass && $_SESSION['result'][2]==$id) header('Location: ../sub/check.php');
+    var_dump($_SESSION['result']);
 }
 ?>
