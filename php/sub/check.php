@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../css/style.css"></link>
-	<link rel="shortcut icon" href="../../css/mamadisimo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../../css/mamadisimo.png" type="image/x-icon">
 	<title>Food Control - List</title>
     </head>
     <body style="background-color: #edfafc;">
@@ -52,7 +52,7 @@ else{ ?>
 		    </tr>
 		</table>
 	    </section>
-	    <aside>
+	    <aside style="background-color: #aff786">
 		<article style="background-color: #e1ff80">
 		    Correo del acudiente: <?= $_SESSION['result'][0]; ?><br>
 		    Identificación del estudiante: <?= $_SESSION['result'][2]; ?><br>

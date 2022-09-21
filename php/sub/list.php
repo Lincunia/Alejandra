@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../css/style.css"></link>
-	<link rel="shortcut icon" href="../../css/mamadisimo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../../css/mamadisimo.png" type="image/x-icon">
 	<title>Food Control - List</title>
     </head>
     <body style="background-color: #edfafc;">
@@ -29,6 +29,30 @@ else{ ?>
 	</header>
 	<div class="basicCon">
 	    <section style="background-color: #80ffc1">
+		<table>
+		    <tr>
+			<th> Producto </th>
+			<th> Fecha de compra </th>
+		    </tr>
+		    <tr>
+			<td>
+			    Saludable: Si
+			</td>
+			<td>
+			    23/09/2022
+			</td>
+		    </tr>
+		    <tr>
+			<td>
+			    Saludable: No
+			</td>
+			<td>
+			    04/10/2022
+			</td>
+		    </tr>
+		</table>
+	    </section>
+	    <aside style="background-color: #aff786">
 		<article style="background-color: #e1ff80">
 		    Nombre del estudiante: <?= $_SESSION['result'][1]; ?><br>
 		    Identificación del estudiante: <?= $_SESSION['result'][0]; ?><br>
@@ -38,7 +62,7 @@ else{ ?>
 			<button type="submit" name="log_out">Cerrar sesión</button>
 		    </form>
 		</article>
-	    </section>
+	    </aside>
 	</div>
 <?php
 if(isset($_POST['log_out'])){

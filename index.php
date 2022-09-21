@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/style.css"></link>
-	<link rel="shortcut icon" href="./css/mamadisimo.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./css/mamadisimo.png" type="image/x-icon">
 	<title>Food Control - Main</title>
     </head>
     <body style="background-color: #edfafc;">
@@ -13,7 +13,7 @@ include('./php/connection.php');
 $_SESSION['property']='display: flex';
 ?>
 	<header style="background-color: #ffa6c5;">
-	    <img src="./css/mamadisimo.ico" style="float: left; width: 5%">
+	    <img src="./css/mamadisimo.png" style="float: left; width: 7.5%; margin: 10px;">
 	    <h1>Food Control</h1>
 	</header>
 	<!--=============================
@@ -22,7 +22,7 @@ $_SESSION['property']='display: flex';
 	<?php if(isset($_POST['sign_in'])){ ?>
 	<div class="modal-container" style="<?= $_SESSION['property'] ?>">
 	    <div class="modal" style="background-color: #fcff9e;">
-		<form action="./php/credential/sign_in.php" method="POST">
+		<form action="./php/crud/sign_in.php" method="POST">
 		    <h1>Registro para los estudiantes</h1>
 		    <input type="number" name="id" placeholder="Número de identidad">
 		    <input type="text" name="name" placeholder="Nombre de estudiante">

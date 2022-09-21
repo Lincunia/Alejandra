@@ -2,19 +2,24 @@
 <?php
 include('../connection.php');
 if(isset($_POST['btn_acc_modl'])){
-    $id=$_POST['id'];
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $pass_s=$_POST['pass_s'];
-    $pass_p=$_POST['pass_p'];
-
-    if($id==="" || $name==="" || $pass_s==="" || $pass_p==="" || $email===""){
+    if(empty($_POST['id']) ||
+	empty($_POST['name']) ||
+	empty($_POST['email']) ||
+	empty($_POST['pass_s']) ||
+	empty($_POST['pass_p'])) {
 	$_SESSION['message']='Inserta datos de forma completa';
 	header('Location: ../../index.php');
     }
-
-    $result=mysqli_query($link, "INSERT INTO students(id, name, password) VALUES ($id, '$name','$pass_s');");
-    $result=mysqli_query($link, "INSERT INTO parents(email, password, students_id) VALUES ('$email', '$pass_p', $id)");
+    else{
+	$result=mysqli_query($link, "INSERT INTO students(id, name, password) VALUES (
+    {$_POST['id']},
+    '{$_POST['name']}',
+    '{$_POST['pass_s']}');");
+	$result=mysqli_query($link, "INSERT INTO parents(email, password, students_id) VALUES ('
+    {$_POST['email']}',
+    '{$_POST['pass_p']}',
+    {$_POST['id']})");
+    }
     if(!$result){
 	die("Petición fallida, posibles motivos:
 	    <ol>
