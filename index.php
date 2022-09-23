@@ -9,6 +9,7 @@
     </head>
     <body style="background-color: #edfafc;">
 <?php
+ob_start();
 include('./php/connection.php');
 $_SESSION['property']='display: flex';
 ?>

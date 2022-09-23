@@ -5,5 +5,5 @@ $link = mysqli_connect(
   'root',
   '',
   'great_brother'
-) or die(mysqli_erro($mysqli));
+) or die('Esto no funciona, conoce los detalles de esto: '.mysqli_erro($mysqli));
 ?>

@@ -1,9 +1,11 @@
 CREATE DATABASE great_brother;
 USE great_brother;
 CREATE TABLE IF NOT EXISTS students(
-    id INT PRIMARY KEY,
-    name VARCHAR(100),
-    password VARCHAR(100)
+    id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    password VARCHAR(100),
+    -- PRIMARY KEY (id, name)
+    PRIMARY KEY (id)
 );
 CREATE TABLE IF NOT EXISTS parents(
     email VARCHAR(100),
@@ -17,8 +19,11 @@ CREATE TABLE IF NOT EXISTS shopping(
     date_of_purch DATETIME DEFAULT CURRENT_TIMESTAMP,
     amount_mon INT,
 
-    name_student VARCHAR(100),
+    name_student VARCHAR(100)
+    /*
+    I got no success on doing a foreign key
     FOREIGN KEY(name_student) REFERENCES students(name)
+    */
 );
 CREATE TABLE IF NOT EXISTS products(
     name VARCHAR(50),

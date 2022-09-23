@@ -21,7 +21,7 @@ function is_session_started() {
     return FALSE;
 }
 if ( is_session_started() === FALSE ){
-    header('Location: ../index.php');
+    header('Refresh: 2; URL = ../index.php');
 }
 else{ ?>
 	<header style="background-color: #ffe880">
@@ -66,8 +66,9 @@ else{ ?>
 	</div>
 <?php
 if(isset($_POST['log_out'])){
+    unset($_SESSION["username"]);
     session_destroy();
-    header('Location: ../../index.php');
+    header('Refresh: 2; URL = ../../index.php');
 }
 } ?>
     </body>
