@@ -29,28 +29,12 @@ else{ ?>
 	</header>
 	<div class="basicCon">
 	    <section style="background-color: #80ffc1">
-		<table>
-		    <tr>
-			<th> Producto </th>
-			<th> Fecha de compra </th>
-		    </tr>
-		    <tr>
-			<td>
-			    Saludable: Si
-			</td>
-			<td>
-			    23/09/2022
-			</td>
-		    </tr>
-		    <tr>
-			<td>
-			    Saludable: No
-			</td>
-			<td>
-			    04/10/2022
-			</td>
-		    </tr>
-		</table>
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" class="menu">
+		<button type="submit" name="to_buy" class="to_buy">Comprar</button>
+<?php
+    include("../crud/read.php");
+?>
+		</form>
 	    </section>
 	    <aside style="background-color: #aff786">
 		<article style="background-color: #e1ff80">
@@ -65,11 +49,31 @@ else{ ?>
 	    </aside>
 	</div>
 <?php
+if(isset($_POST['to_buy'])){
+    if(!empty($_POST['prod_for_them'])) {
+	$txt='';
+	$money=0;
+	foreach($prod as $key => $value) {
+	    foreach($_POST['prod_for_them'] as $check) {
+		if($key==$check){
+		    $money+=$value;
+		    $txt.=$check . ", ";
+		}
+	    }
+	}
+	echo $txt.$money;
+	mysqli_query($link, "INSERT INTO shopping(name_prod, date_of_purch, amount_mon, name_student) VALUES ('{$txt}', NOW(), {$money}, '{$_SESSION['result'][1]}');");
+    }
+    header("Location: ".$_SERVER['PHP_SELF']);
+    exit;
+}
+if (array_key_exists('postdata', $_SESSION)) {
+    unset($_SESSION['postdata']);
+}
 if(isset($_POST['log_out'])){
     unset($_SESSION["username"]);
     session_destroy();
     header('Refresh: 2; URL = ../../index.php');
-}
-} ?>
+} } ?>
     </body>
 </html>

@@ -31,31 +31,21 @@ else{ ?>
 	    <section style="background-color: #80ffc1">
 		<table>
 		    <tr>
-			<th> Producto </th>
-			<th> Fecha de compra </th>
+			<th>Productos adquiridos</th>
+			<th>Fecha de compra</th>
+			<th>Cantidad a gastar</th>
+			<th>Nombre del estudiante</th>
 		    </tr>
-		    <tr>
-			<td>
-			    Saludable: Si
-			</td>
-			<td>
-			    23/09/2022
-			</td>
-		    </tr>
-		    <tr>
-			<td>
-			    Saludable: No
-			</td>
-			<td>
-			    04/10/2022
-			</td>
-		    </tr>
+<?php
+    include('../crud/read.php');
+?>
 		</table>
 	    </section>
 	    <aside style="background-color: #aff786">
 		<article style="background-color: #e1ff80">
 		    Correo del acudiente: <?= $_SESSION['result'][0]; ?><br>
 		    Identificación del estudiante: <?= $_SESSION['result'][2]; ?><br>
+		    Nombre del estudiante: <?= $name; ?>
 		</article>
 		<article style="background-color: #ffdd80">
 		    <form method="post">

@@ -79,3 +79,24 @@ button{
     width: 50%;
     max-width: 100%;
 }
+/*=============================*/
+.menu{
+    padding: 10px;
+}
+.menu div{
+    display: block;
+    border-radius: 0px;
+    margin-top: 4px;
+    transition: all .2s ease-in-out;
+    padding: 10px;
+    background-color: #F7FFA3;
+    color: black;
+}
+.menu label{
+    float: right;
+}
+/*=============================*/
+.to_buy{
+    position: fixed;
+    margin-left: 43%;
+}
