@@ -1,5 +1,11 @@
 <?php
 include('../connection.php');
+// CANCEL BEFORE START
+if(isset($_POST['btn_can_modl_l'])){
+    $_SESSION['property']='display: none';
+    header('Location: ../../index.php');
+}
+// STARTING POINT
 $_SESSION['result']='';
 if(isset($_POST['parents_log_in'])){
     $id=$_POST['parents_id'];

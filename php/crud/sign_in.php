@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../../css/style.css"></link>
 <?php
 include('../connection.php');
 if(isset($_POST['btn_acc_modl'])){
