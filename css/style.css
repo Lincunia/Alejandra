@@ -54,13 +54,13 @@ input[type=checkbox]{
 button{
     border-radius: 0px;
     background-color: #9ad3fc;
-    width: 50%;
     border: 0px solid;
     padding: 5px;
     margin: 5px;
 }
 .exce_enter{
     background-color: #9ad3fc;
+    width: 50%;
     padding: 5px;
     text-align: center;
 }

@@ -30,7 +30,7 @@ else{ ?>
 	<div class="basicCon">
 	    <section style="background-color: #80ffc1">
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" class="menu">
-		<button type="submit" name="to_buy" class="to_buy">Comprar</button>
+		    <button type="submit" name="to_buy" class="to_buy">Comprar</button>
 <?php
     include("../crud/read.php");
 ?>
@@ -62,8 +62,14 @@ if(isset($_POST['to_buy'])){
 	    }
 	}
 	echo $txt.$money;
-	mysqli_query($link, "INSERT INTO shopping(name_prod, date_of_purch, amount_mon, name_student) VALUES ('{$txt}', NOW(), {$money}, '{$_SESSION['result'][1]}');");
+	mysqli_query($link, "INSERT INTO shopping(name_prod, date_of_purch, amount_mon, name_student) VALUES (
+	    '{$txt}',
+	    NOW(),
+	{$money},
+	'{$_SESSION['result'][1]}');");
+	$_POST['prod_for_them']=null;
     }
+    unset($_POST);
     header("Location: ".$_SERVER['PHP_SELF']);
     exit;
 }

@@ -80,9 +80,9 @@ $_SESSION['property']='display: flex';
 	    </article>
 	</div>
 	<form method="POST">
-	    <button type="submit" name="sign_up_s">Acceso del estudiante</button><br>
-	    <button type="submit" name="sign_up_p">Acceso del acudiente</button><br>
-	    <button type="submit" name="sign_in">Registrar estudiantes y padres</button><br>
+	    <button type="submit" class="exce_enter" name="sign_up_s">Acceso del estudiante</button><br>
+	    <button type="submit" class="exce_enter" name="sign_up_p">Acceso del acudiente</button><br>
+	    <button type="submit" class="exce_enter" name="sign_in">Registrar estudiantes y padres</button><br>
 	</form>
     </body>
 </html>
