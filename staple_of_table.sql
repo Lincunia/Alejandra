@@ -65,11 +65,11 @@ INSERT INTO products(name, prize) VALUES
 ('pepsi', 1200);
 
 INSERT INTO students(id, name, password) VALUES
-(1034400029, 'Diego 3Alejandro Agudelo Vasquez', '12345Dieguito'),
-(1019604047, 'Alejandra Alvarez Mora', 'we_love_the_truth'),
+(1034400029, 'Diego Alejandro Agudelo Vasquez', '12345Dieguito'),
+(1025141597, 'Martinez Quinche Santiago Enrique', 'no_tan_dificl'),
 (1013097421, 'Perdomo Velasquez Sebastian', 'im_not_your_boyfriend');
 
 INSERT INTO parents(students_id, email, password) VALUES
 (1034400029, 'agudelodiego10.a@gmail.com', 'its_just_a_burning_memory'),
-(1019604047, 'alvarezalejandra10b@gmail.com', 'c4lm1ng_n0t10n'),
+(1025141597, 'msanti0274@gmail.com', 'no_tan_dificl'),
 (1013097421, 'perdomovelasquezsebastian10c@gmail.com', 'without_you_i_will_die');

@@ -39,6 +39,6 @@ if($_SERVER['PHP_SELF']=='/Alejandra/php/sub/list.php'){
     <div>
 	<input type="checkbox" name="prod_for_them[]" value="<?= $tea ?>">
 	<?= $tea ?>
-	<label >$ <?= $coffee ?> </label>
+	<label> $ <?= $coffee ?> </label>
     </div>
 <?php } } ?>
