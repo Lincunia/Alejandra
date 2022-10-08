@@ -14,11 +14,11 @@ if (isset($_POST['btn_acc_modl'])) {
         input_queries($link, "INSERT INTO students(id, name, password) VALUES (".
         prepare_data($_POST['id'], $link).", '".
         prepare_data($_POST['name'], $link)."', '".
-        password_hash(prepare_data($_POST['pass_s'], $link), PASSWORD_DEFAULT)."');");
+        prepare_data($_POST['pass_s'], $link)."');");
 
         input_queries($link, "INSERT INTO parents(email, password, students_id) VALUES ('".
         prepare_data($_POST['email'], $link)."', '".
-        password_hash(prepare_data($_POST['pass_p'], $link), PASSWORD_DEFAULT)."', ".
+        prepare_data($_POST['pass_p'], $link)."', ".
         prepare_data($_POST['id'], $link).")");
     }
     

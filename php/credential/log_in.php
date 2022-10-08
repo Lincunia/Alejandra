@@ -8,9 +8,9 @@ if (isset($_POST['btn_can_modl_l'])) {
 // STARTING POINT
 $_SESSION['result'] = '';
 if (isset($_POST['parents_log_in'])) {
-    $id = $_POST['parents_id'];
-    $email = $_POST['parents_email'];
-    $pass = $_POST['parents_pass'];
+    $id = prepare_data($_POST['parents_id'], $link);
+    $email = prepare_data($_POST['parents_email'], $link);
+    $pass = prepare_data($_POST['parents_pass'], $link);
     $result = mysqli_query($link, "SELECT * FROM parents WHERE students_id=$id AND email='$email' AND password='$pass';");
 }
 if (isset($_POST['students_log_in'])) {
@@ -18,14 +18,7 @@ if (isset($_POST['students_log_in'])) {
     $name = prepare_data($_POST['students_name'], $link);
     $pass = prepare_data($_POST['students_pass'], $link);
     $result = mysqli_query($link, "SELECT * FROM students WHERE id=$id AND name='$name' AND password='$pass';");
-    $row = mysqli_fetch_assoc($result);
-    var_dump($pass);
-    if (mysqli_num_rows($result) != 0) {
-        $dbpassword = $row['password'];
-        echo password_verify($password, $dbpassword);
-    }
 }
-/*
 if (!$result) {
     die('<br>Consulta no valida: ' . $link->error);
 } else {
@@ -37,5 +30,4 @@ if (!$result) {
     if ($_SESSION['result'][0] == $id && $_SESSION['result'][1] == $name && $_SESSION['result'][2] == $pass) header('Location: ../sub/list.php');
     if ($_SESSION['result'][0] == $email && $_SESSION['result'][1] == $pass && $_SESSION['result'][2] == $id) header('Location: ../sub/check.php');
 }
-*/
 ?>
